@@ -1,14 +1,57 @@
+import {
+  GET_SMURFS_START,
+  GET_SMURFS_SUCCESS,
+  GET_SMURFS_FAILURE,
+  ADD_SMURF,
+  ADD_SMURF_FAILURE,
+} from '../actions';
 
 export const initialState = {
-}
+  smurfs: [],
+  loading: false,
+  error: '',
+};
 
-const reducer = ()=>{
-}
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case GET_SMURFS_START:
+      return {
+        ...state,
+        smurfs: [],
+        loading: true,
+      };
+    case GET_SMURFS_SUCCESS:
+      return {
+        ...state,
+        smurfs: action.payload,
+        loading: false,
+      };
+    case GET_SMURFS_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
+    case ADD_SMURF:
+      return {
+        ...state,
+        smurfs: [...state.smurfs, action.paload],
+      };
+    case ADD_SMURF_FAILURE:
+      return {
+        ...state,
+        error: action.payload,
+      };
+
+    default:
+      return state;
+  }
+};
 
 export default reducer;
 
 //Task List:
-//1. Add in the initialState needed to hold: 
+//1. Add in the initialState needed to hold:
 //      - an array of smurfs
 //      - a boolean indicating if the app is loading
 //      - error text
