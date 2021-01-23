@@ -3,7 +3,6 @@ import axios from 'axios';
 export const GET_SMURFS_START = 'GET_SMURFS_START';
 export const GET_SMURFS_SUCCESS = 'GET_SMURFS_SUCCESS';
 export const GET_SMURFS_FAILURE = 'GET_SMURFS_FAILURE';
-export const ADD_SMURF = 'ADD_SMURFS_START';
 export const ADD_SMURF_FAILURE = 'ADD_SMURFS_FAILURE';
 
 export const getSmurfs = () => (dispatch) => {

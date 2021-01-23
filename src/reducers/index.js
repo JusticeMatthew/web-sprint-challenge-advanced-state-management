@@ -2,7 +2,6 @@ import {
   GET_SMURFS_START,
   GET_SMURFS_SUCCESS,
   GET_SMURFS_FAILURE,
-  ADD_SMURF,
   ADD_SMURF_FAILURE,
 } from '../actions';
 
@@ -31,11 +30,6 @@ const reducer = (state = initialState, action) => {
         ...state,
         loading: false,
         error: action.payload,
-      };
-    case ADD_SMURF:
-      return {
-        ...state,
-        smurfs: [...state.smurfs, action.paload],
       };
     case ADD_SMURF_FAILURE:
       return {
