@@ -72,7 +72,7 @@ class AddForm extends React.Component {
               id='description'
             />
           </div>
-          {this.props.error ? (
+          {this.props.error && (
             <div
               data-testid='errorAlert'
               className='alert alert-danger'
@@ -80,8 +80,6 @@ class AddForm extends React.Component {
             >
               Error: {this.props.error.Error}
             </div>
-          ) : (
-            <></>
           )}
           <button>Submit Smurf</button>
         </form>
@@ -95,7 +93,7 @@ const mapStateToProps = (state) => {
     error: state.error,
   };
 };
-// export default AddForm;
+
 export default connect(mapStateToProps, { addSmurf })(AddForm);
 
 //Task List:
